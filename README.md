@@ -39,6 +39,28 @@
   
   在本项目下，已将该库拷贝到“libraries”中。
 
+- ### 使用timer2的舵机库：
+  
+  arduino提供的定时器有三个，其中timer0和timer2是8位计时器，而timer1是16位计时器。因此，arduino官方的舵机控制库Servo.h使用timer1来控制舵机的pwm波。
+  
+  然而不幸的是，该arduino板的9和10引脚经过改造可以直接驱动电机，而9和10引脚也使用timer1进行analogwrite。下图为官方文档的说明文字：
+  
+  ![](assets/2023-05-11-01-06-30-8d1af703d6ae4afe3c84f1d9dd023dc.png)
+  
+  这就导致一旦舵机被启用（ servo.attach(); ），则9和10口无法驱动电机。这就需要外接驱动板驱动电机，但电压只有5V，使得电机转速远不如直接驱动（7V左右）。
+  
+  幸而CSDN有大佬手抡了一份基于timer2的舵机驱动代码：
+  
+  [(6条消息) Arduino UNO基于Timer2的舵机驱动库（精度比官方的高）_servotimer2_straka的博客-CSDN博客](https://blog.csdn.net/atp1992/article/details/104116652)
+  
+  其库在此处，各种舵机的函数与官方文档几乎一样，具体可参照example的代码：
+  
+  [atp798/Timer2ServoPwm: Arduino servo driver library base on timer2 (github.com)](https://github.com/atp798/Timer2ServoPwm)
+  
+  使用此库，即可解决舵机和电机的冲突问题。
+  
+  在本项目下，已将该库拷贝到“libraries”中。
+
 # 代码烧录
 
 ## 下载：
