@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 环境配置：
 
 ## arduino IDE：
