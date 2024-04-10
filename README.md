@@ -107,8 +107,3 @@
   
   建议每次命名都用“作者+上传年月日”的格式，有助于团队协作。
 
-## 分享项目：
-
->>>>>>> ab54f7db4bc253c52ed03182603e0990161998c6
-- 右键项目，点击“share sketch”，选择“public”，复制link，其他人即可使用该网址访问此项目。# arduino_car_various_terrains
-# arduino_car_various_terrains
